@@ -1,8 +1,12 @@
 "use client";
 import { Task, TaskPriority, TaskSize, TaskStatus } from "@/shared/task.model";
 import "./my-tasks.css";
+import { useState } from "react";
+import { AddTask } from "./add-task/add-task";
 
 export function MyTasks() {
+  const [tasks, setTasks] = useState();
+
   const mockTasks: Task[] = [
     {
       status: TaskStatus.TODO,
@@ -52,6 +56,7 @@ export function MyTasks() {
           ))}
         </tbody>
       </table>
+      <AddTask />
     </div>
   );
 }
