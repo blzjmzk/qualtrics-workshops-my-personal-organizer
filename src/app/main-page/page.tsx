@@ -1,17 +1,12 @@
 import Link from "next/link";
 import "./main-page.css";
+import { Sidebar } from "../shared/sidebar/sidebar";
 
 export default function MainPage() {
   return (
     <section id="MainPage" className="main-page-container">
-      <nav className="sidebar">
-        <Link href="/" className="link">
-          Main Page
-        </Link>
-        <Link href="/resources" className="link">
-          Resources
-        </Link>
-      </nav>
+      <Sidebar />
+      MainPage
     </section>
   );
 }
