@@ -26,4 +26,5 @@ tr:nth-child(even) {
 
 .my-tasks-container {
   width: 80%;
+  padding: 20px;
 }

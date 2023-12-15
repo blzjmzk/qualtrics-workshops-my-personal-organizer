@@ -1,12 +1,18 @@
 import Link from "next/link";
 import "./resources.css";
 import { Sidebar } from "../shared/sidebar/sidebar";
+import { UploadResources } from "./upload-resources/upload-resources";
 
 export default function Resources() {
   return (
-    <section id="MainPage" className="main-page-container">
+    <div id="MyResources" className="my-resources-container">
       <Sidebar />
-      Resources
-    </section>
+
+      <div className="main-content">
+        <h3>My resources</h3>
+
+        <UploadResources />
+      </div>
+    </div>
   );
 }

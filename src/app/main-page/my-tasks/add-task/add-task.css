@@ -5,17 +5,21 @@ h2 {
 
 select {
   color: grey;
+  border-radius: 8px;
+  padding-left: 8px;
 }
 
 input {
   color: grey;
+  border-radius: 8px;
+  padding-left: 8px;
 }
 
 .add-task-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 68px auto auto;
+  margin: 25px auto auto;
 }
 
 .add-task-form {
@@ -31,10 +35,12 @@ input {
   border: 1px solid #56bcfc;
   margin-top: 24px;
   padding: 4px 8px;
+  border-radius: 8px;
 }
 
 .add-task-btn:hover {
   background-color: #56bcfc;
   border: 1px solid #56bcfc;
   opacity: 0.7;
+  border-radius: 8px;
 }

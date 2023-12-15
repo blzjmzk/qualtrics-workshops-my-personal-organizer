@@ -4,22 +4,26 @@ import "./add-task.css";
 import { Form, Button } from "react-bootstrap";
 import { TaskStatus, TaskPriority, TaskSize, Task } from "@/shared/task.model";
 
-export function AddTask() {
+interface AddTaskProps {
+  setTaskCallback: (task: Task) => void;
+}
+
+export function AddTask({ setTaskCallback }: AddTaskProps) {
   const [name, setName] = useState<string>("");
   const [status, setStatus] = useState<TaskStatus | undefined>(undefined);
   const [priority, setPriority] = useState<TaskPriority | undefined>(undefined);
   const [size, setSize] = useState<TaskSize | undefined>(undefined);
   const [details, setDetails] = useState<string>("");
 
-  const onAddTaskClick = (): Task | undefined => {
+  const onAddTaskClick = () => {
     if (status && name && priority && size && details) {
-      return {
+      setTaskCallback({
         status: status,
         name: name,
         priority: priority,
         size: size,
         details: details,
-      };
+      });
     }
   };
 

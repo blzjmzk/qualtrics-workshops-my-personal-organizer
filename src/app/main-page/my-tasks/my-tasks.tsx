@@ -5,34 +5,14 @@ import { useState } from "react";
 import { AddTask } from "./add-task/add-task";
 
 export function MyTasks() {
-  const [tasks, setTasks] = useState();
+  const [tasks, setTasks] = useState<Task[]>([]);
 
-  const mockTasks: Task[] = [
-    {
-      status: TaskStatus.TODO,
-      name: "Task 1",
-      priority: TaskPriority.HIGH,
-      size: TaskSize.L,
-      details: "Task 1 details",
-    },
-    {
-      status: TaskStatus.IN_PROGRESS,
-      name: "Task 2",
-      priority: TaskPriority.MEDIUM,
-      size: TaskSize.M,
-      details: "Task 2 details",
-    },
-    {
-      status: TaskStatus.DONE,
-      name: "Task 3",
-      priority: TaskPriority.HIGH,
-      size: TaskSize.S,
-      details: "Task 3 details",
-    },
-  ];
+  const setTaskCallback = (task: Task) => {
+    setTasks([...tasks, task]);
+  };
 
   return (
-    <div>
+    <div className="my-tasks-container">
       My tasks
       <table>
         <thead>
@@ -45,7 +25,7 @@ export function MyTasks() {
           </tr>
         </thead>
         <tbody>
-          {mockTasks.map((task, index) => (
+          {tasks.map((task, index) => (
             <tr key={`${task.name} ${index}`}>
               <td>{task.status}</td>
               <td>{task.name}</td>
@@ -56,7 +36,7 @@ export function MyTasks() {
           ))}
         </tbody>
       </table>
-      <AddTask />
+      <AddTask setTaskCallback={setTaskCallback} />
     </div>
   );
 }

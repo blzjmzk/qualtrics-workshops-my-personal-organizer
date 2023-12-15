@@ -21,6 +21,10 @@
   padding: 5px 15px;
 }
 
+.resources {
+  padding: 20px;
+}
+
 .header {
   padding-top: 24px;
   grid-area: header;
